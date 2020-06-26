@@ -71,10 +71,10 @@
 		</dependency>
 	</dependencies>
 	<distributionManagement>
-		 <repository>
+		 </snapshotRepository>
 			<id>nexus</id>
 			<url>http://172.31.72.170:8081/nexus/content/repositories/releases</url>
-		 </repository>
+		 </snapshotRepository>
 	</distributionManagement>
 
 	<build>
