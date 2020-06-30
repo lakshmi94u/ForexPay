@@ -11,9 +11,8 @@
 	</parent>
 	<groupId>com.squad</groupId>
 	<artifactId>ForexPay</artifactId>
-	
-<version>0.0.1-SNAPSHOT</version>
-	
+     <!--   <version>0.0.1-SNAPSHOT</version> -->
+	<version>1.0-SNAPSHOT</version> 
 	<name>ForexPay</name>
 	<description>Money Transfer project for Spring Boot</description>
 
@@ -70,11 +69,22 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	 <scm>
+        <connection>scm:https://github.com/devopstraining1990/ForexPay.git</connection>
+    <developerConnection>scm:git:https://devopstraining1990:devops0523@github.com/devopstraining1990/ForexPay.git</developerConnection>
+    <url>https://github.com/devopstraining1990/ForexPay.git</url>
+    <tag>HEAD</tag>
+  </scm>
 	<distributionManagement>
-		 <snapshotRepository>
+	         <snapshotRepository>
+		 <id>nexus</id>
+		<url>http://172.31.63.169:8081/nexus/content/repositories/snapshots</url>
+		 </snapshotRepository> 
+			  <repository>
 			<id>nexus</id>
-			<url>http://172.31.63.169:8081/nexus/content/repositories/snapshots</url>
-		 </snapshotRepository>
+			<url>http://172.31.63.169:8081/nexus/content/repositories/releases</url>
+	               </repository>
+		
 	</distributionManagement>
 
 	<build>
@@ -121,6 +131,14 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
